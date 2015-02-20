@@ -11,17 +11,9 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        title_to_search = 'matrix'
-        omdb_api_url = "http://www.omdbapi.com/?t=" + title_to_search + '&y=&plot=short&r=json'
-        response = urllib2.urlopen(omdb_api_url).read()
-        data = json.loads(response.decode('utf8'))
-        
-        film = data['Title'] + '  ' + data['Year'] + '  ' + data['Plot']
         
         template = JINJA_ENVIRONMENT.get_template('form.html')
-        template_values = {
-            'film': film,
-        }
+        template_values = {}
         self.response.write(template.render(template_values))
         
     def post(self):
@@ -29,7 +21,7 @@ class MainPage(webapp2.RequestHandler):
         searchyear = self.request.get('y')
         searchplot = self.request.get('plot')
         title_to_search = searchtitle
-        omdb_api_url = "http://www.omdbapi.com/?t=" + title_to_search + '&y=&plot=short&r=json'
+        omdb_api_url = "http://www.omdbapi.com/?t=" + title_to_search + '&y=&plot=' + searchplot + '&r=json'
         response = urllib2.urlopen(omdb_api_url).read()
         data = json.loads(response.decode('utf8'))
         
