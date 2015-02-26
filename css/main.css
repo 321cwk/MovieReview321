@@ -1,13 +1,23 @@
-/*
-    Document   : CSS
-    Created on : 2015-02-25 01:33 PM
-    Author     : NeelyKidd
-    Description:
-    Purpose of the stylesheet follows.
-    To change this template use Tools | Templates.
-*/
+root {
+    display: block;
+}
 
 
+body {
+    font-family: fantasy;
+    background-color: rgb(93, 101, 255);
+}
+
+
+h1 {
+    font-size: -webkit-xxx-large;
+    font-variant: small-caps;
+    font-weight: 600;
+    color: honeydew;
+    text-align: center;
+}
+
+ 
 root {
     display: block;
 }

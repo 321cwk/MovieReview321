@@ -10,7 +10,7 @@ handlers:
   upload: favicon\.ico
 
 - url: /css
-  script: main.app
+  static_dir: css
   
 - url: /js
   script: main.app
